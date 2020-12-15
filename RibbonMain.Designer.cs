@@ -35,13 +35,16 @@ namespace mText
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonMain));
             this.mText = this.Factory.CreateRibbonTab();
             this.gBody = this.Factory.CreateRibbonGroup();
             this.gTmpl = this.Factory.CreateRibbonGroup();
             this.gRef = this.Factory.CreateRibbonGroup();
             this.gCapt = this.Factory.CreateRibbonGroup();
             this.gAbout = this.Factory.CreateRibbonGroup();
+            this.btnUpdateLink = this.Factory.CreateRibbonButton();
             this.mText.SuspendLayout();
+            this.gAbout.SuspendLayout();
             this.SuspendLayout();
             // 
             // mText
@@ -80,8 +83,16 @@ namespace mText
             // 
             // gAbout
             // 
+            this.gAbout.Items.Add(this.btnUpdateLink);
             this.gAbout.Label = "关于程序";
             this.gAbout.Name = "gAbout";
+            // 
+            // btnUpdateLink
+            // 
+            this.btnUpdateLink.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateLink.Image")));
+            this.btnUpdateLink.Label = "版本更新";
+            this.btnUpdateLink.Name = "btnUpdateLink";
+            this.btnUpdateLink.ShowImage = true;
             // 
             // RibbonMain
             // 
@@ -91,6 +102,8 @@ namespace mText
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonMain_Load);
             this.mText.ResumeLayout(false);
             this.mText.PerformLayout();
+            this.gAbout.ResumeLayout(false);
+            this.gAbout.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -103,6 +116,7 @@ namespace mText
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gRef;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gCapt;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gAbout;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnUpdateLink;
     }
 
     partial class ThisRibbonCollection
