@@ -42,7 +42,8 @@ namespace mText
             this.gRef = this.Factory.CreateRibbonGroup();
             this.gCapt = this.Factory.CreateRibbonGroup();
             this.gAbout = this.Factory.CreateRibbonGroup();
-            this.btnUpdateLink = this.Factory.CreateRibbonButton();
+            this.gAbout_btnInfo = this.Factory.CreateRibbonButton();
+            this.gAbout_btnVersion = this.Factory.CreateRibbonButton();
             this.mText.SuspendLayout();
             this.gAbout.SuspendLayout();
             this.SuspendLayout();
@@ -83,16 +84,28 @@ namespace mText
             // 
             // gAbout
             // 
-            this.gAbout.Items.Add(this.btnUpdateLink);
+            this.gAbout.Items.Add(this.gAbout_btnInfo);
+            this.gAbout.Items.Add(this.gAbout_btnVersion);
             this.gAbout.Label = "关于程序";
             this.gAbout.Name = "gAbout";
             // 
-            // btnUpdateLink
+            // gAbout_btnInfo
             // 
-            this.btnUpdateLink.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateLink.Image")));
-            this.btnUpdateLink.Label = "版本更新";
-            this.btnUpdateLink.Name = "btnUpdateLink";
-            this.btnUpdateLink.ShowImage = true;
+            this.gAbout_btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("gAbout_btnInfo.Image")));
+            this.gAbout_btnInfo.Label = "使用说明";
+            this.gAbout_btnInfo.Name = "gAbout_btnInfo";
+            this.gAbout_btnInfo.ScreenTip = "使用说明";
+            this.gAbout_btnInfo.ShowImage = true;
+            this.gAbout_btnInfo.SuperTip = "查看使用方法";
+            // 
+            // gAbout_btnVersion
+            // 
+            this.gAbout_btnVersion.Image = ((System.Drawing.Image)(resources.GetObject("gAbout_btnVersion.Image")));
+            this.gAbout_btnVersion.Label = "程序版本";
+            this.gAbout_btnVersion.Name = "gAbout_btnVersion";
+            this.gAbout_btnVersion.ScreenTip = "程序版本";
+            this.gAbout_btnVersion.ShowImage = true;
+            this.gAbout_btnVersion.SuperTip = "查看版本号及最新版网址";
             // 
             // RibbonMain
             // 
@@ -116,7 +129,8 @@ namespace mText
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gRef;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gCapt;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gAbout;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnUpdateLink;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton gAbout_btnVersion;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton gAbout_btnInfo;
     }
 
     partial class ThisRibbonCollection
