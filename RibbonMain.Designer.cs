@@ -97,6 +97,7 @@ namespace mText
             this.gAbout_btnInfo.ScreenTip = "使用说明";
             this.gAbout_btnInfo.ShowImage = true;
             this.gAbout_btnInfo.SuperTip = "查看使用方法";
+            this.gAbout_btnInfo.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gAbout_btnInfo_Click);
             // 
             // gAbout_btnVersion
             // 
@@ -106,6 +107,7 @@ namespace mText
             this.gAbout_btnVersion.ScreenTip = "程序版本";
             this.gAbout_btnVersion.ShowImage = true;
             this.gAbout_btnVersion.SuperTip = "查看版本号及最新版网址";
+            this.gAbout_btnVersion.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gAbout_btnVersion_Click);
             // 
             // RibbonMain
             // 
