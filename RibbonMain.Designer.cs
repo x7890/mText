@@ -38,13 +38,17 @@ namespace mText
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonMain));
             this.mText = this.Factory.CreateRibbonTab();
             this.gBody = this.Factory.CreateRibbonGroup();
+            this.gBody_btnCount = this.Factory.CreateRibbonSplitButton();
+            this.gBody_btnCountSettings = this.Factory.CreateRibbonButton();
             this.gTmpl = this.Factory.CreateRibbonGroup();
             this.gRef = this.Factory.CreateRibbonGroup();
             this.gCapt = this.Factory.CreateRibbonGroup();
             this.gAbout = this.Factory.CreateRibbonGroup();
             this.gAbout_btnInfo = this.Factory.CreateRibbonButton();
             this.gAbout_btnVersion = this.Factory.CreateRibbonButton();
+            this.gAbout_btnExportPref = this.Factory.CreateRibbonButton();
             this.mText.SuspendLayout();
+            this.gBody.SuspendLayout();
             this.gAbout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +65,26 @@ namespace mText
             // 
             // gBody
             // 
+            this.gBody.Items.Add(this.gBody_btnCount);
             this.gBody.Label = "正文编辑";
             this.gBody.Name = "gBody";
+            // 
+            // gBody_btnCount
+            // 
+            this.gBody_btnCount.Image = ((System.Drawing.Image)(resources.GetObject("gBody_btnCount.Image")));
+            this.gBody_btnCount.Items.Add(this.gBody_btnCountSettings);
+            this.gBody_btnCount.Label = "字数统计";
+            this.gBody_btnCount.Name = "gBody_btnCount";
+            this.gBody_btnCount.ScreenTip = "字数统计";
+            this.gBody_btnCount.SuperTip = "统计光标选中区域或预设区域的字数。预设区域只在未选中文本时有效";
+            this.gBody_btnCount.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCount_Click);
+            // 
+            // gBody_btnCountSettings
+            // 
+            this.gBody_btnCountSettings.Label = "统计设置";
+            this.gBody_btnCountSettings.Name = "gBody_btnCountSettings";
+            this.gBody_btnCountSettings.ShowImage = true;
+            this.gBody_btnCountSettings.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCountSettings_Click);
             // 
             // gTmpl
             // 
@@ -86,6 +108,7 @@ namespace mText
             // 
             this.gAbout.Items.Add(this.gAbout_btnInfo);
             this.gAbout.Items.Add(this.gAbout_btnVersion);
+            this.gAbout.Items.Add(this.gAbout_btnExportPref);
             this.gAbout.Label = "关于程序";
             this.gAbout.Name = "gAbout";
             // 
@@ -109,6 +132,16 @@ namespace mText
             this.gAbout_btnVersion.SuperTip = "查看版本号及最新版网址";
             this.gAbout_btnVersion.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gAbout_btnVersion_Click);
             // 
+            // gAbout_btnExportPref
+            // 
+            this.gAbout_btnExportPref.Image = ((System.Drawing.Image)(resources.GetObject("gAbout_btnExportPref.Image")));
+            this.gAbout_btnExportPref.Label = "设置备份";
+            this.gAbout_btnExportPref.Name = "gAbout_btnExportPref";
+            this.gAbout_btnExportPref.ScreenTip = "设置备份";
+            this.gAbout_btnExportPref.ShowImage = true;
+            this.gAbout_btnExportPref.SuperTip = "本程序自定义设置项储存在注册表内，卸载时会自动删除。使用此按钮备份到文件";
+            this.gAbout_btnExportPref.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gAbout_btnExportPref_Click);
+            // 
             // RibbonMain
             // 
             this.Name = "RibbonMain";
@@ -117,6 +150,8 @@ namespace mText
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.RibbonMain_Load);
             this.mText.ResumeLayout(false);
             this.mText.PerformLayout();
+            this.gBody.ResumeLayout(false);
+            this.gBody.PerformLayout();
             this.gAbout.ResumeLayout(false);
             this.gAbout.PerformLayout();
             this.ResumeLayout(false);
@@ -133,6 +168,9 @@ namespace mText
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup gAbout;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton gAbout_btnVersion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton gAbout_btnInfo;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton gAbout_btnExportPref;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton gBody_btnCountSettings;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSplitButton gBody_btnCount;
     }
 
     partial class ThisRibbonCollection

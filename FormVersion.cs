@@ -37,7 +37,7 @@ namespace mText
             linkLabel1.Links.Add(start, link.Length, link);
             linkLabel1.Text += "\n";
 
-            linkLabel1.Text += "要想卸载，请到控制面板进行移除。\n";
+            linkLabel1.Text += "若要卸载，请到控制面板进行移除。\n";
 
             Height += linkLabel1.Height;
         }

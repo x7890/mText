@@ -9,11 +9,28 @@ namespace mText
 {
     public partial class RibbonMain
     {
+        Microsoft.Office.Interop.Word.Application app;
+
         private void RibbonMain_Load(object sender, RibbonUIEventArgs e)
         {
-
+            app = Globals.ThisAddIn.Application;
         }
 
+        // 正文编辑-字数统计
+        private void gBody_btnCount_Click(object sender, RibbonControlEventArgs e)
+        {
+            new FormCountSettings().Count(app);
+        }
+        // 正文编辑-字数统计-统计设置
+        private void gBody_btnCountSettings_Click(object sender, RibbonControlEventArgs e)
+        {
+            new FormCountSettings().Show();
+        }
+
+
+
+
+        // 关于程序-使用说明
         private void gAbout_btnInfo_Click(object sender, RibbonControlEventArgs e)
         {
             string info = "";
@@ -47,10 +64,17 @@ namespace mText
             info += "\n";
             MessageBox.Show(info, "使用说明");
         }
-
+        // 关于程序-程序版本
         private void gAbout_btnVersion_Click(object sender, RibbonControlEventArgs e)
         {
             new FormVersion().Show();
         }
+        // 关于程序-设置备份
+        private void gAbout_btnExportPref_Click(object sender, RibbonControlEventArgs e)
+        {
+            RegPref.SavePref();
+        }
+
+
     }
 }
