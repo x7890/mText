@@ -1,7 +1,7 @@
 ﻿
 namespace mText
 {
-    partial class FormCountSettings
+    partial class CountSettingsForm
     {
         /// <summary>
         /// Required designer variable.

@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace mText
 {
-    public partial class FormCountSettings : Form
+    public partial class CountSettingsForm : Form
     {
-        public FormCountSettings()
+        public CountSettingsForm()
         {
             InitializeComponent();
 

@@ -5,9 +5,9 @@ using System.Reflection;
 
 namespace mText
 {
-    public partial class FormVersion : Form
+    public partial class VersionForm : Form
     {
-        public FormVersion()
+        public VersionForm()
         {
             InitializeComponent();
         }

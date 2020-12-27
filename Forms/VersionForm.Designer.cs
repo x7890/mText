@@ -1,7 +1,7 @@
 ﻿
 namespace mText
 {
-    partial class FormVersion
+    partial class VersionForm
     {
         /// <summary>
         /// Required designer variable.

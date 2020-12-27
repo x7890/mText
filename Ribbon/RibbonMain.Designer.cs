@@ -39,6 +39,7 @@ namespace mText
             this.mText = this.Factory.CreateRibbonTab();
             this.gBody = this.Factory.CreateRibbonGroup();
             this.gBody_btnCount = this.Factory.CreateRibbonSplitButton();
+            this.gBody_btnCountNow = this.Factory.CreateRibbonButton();
             this.gBody_btnCountSettings = this.Factory.CreateRibbonButton();
             this.gBody_btnFormula = this.Factory.CreateRibbonToggleButton();
             this.gTmpl = this.Factory.CreateRibbonGroup();
@@ -48,7 +49,6 @@ namespace mText
             this.gAbout_btnInfo = this.Factory.CreateRibbonButton();
             this.gAbout_btnVersion = this.Factory.CreateRibbonButton();
             this.gAbout_btnExportPref = this.Factory.CreateRibbonButton();
-            this.gBody_btnCountNow = this.Factory.CreateRibbonButton();
             this.mText.SuspendLayout();
             this.gBody.SuspendLayout();
             this.gAbout.SuspendLayout();
@@ -83,6 +83,16 @@ namespace mText
             this.gBody_btnCount.ScreenTip = "字数统计";
             this.gBody_btnCount.SuperTip = "统计光标选中区域或预设区域的字数。预设区域只在未选中文本时有效";
             this.gBody_btnCount.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCount_Click);
+            // 
+            // gBody_btnCountNow
+            // 
+            this.gBody_btnCountNow.Image = ((System.Drawing.Image)(resources.GetObject("gBody_btnCountNow.Image")));
+            this.gBody_btnCountNow.Label = "立刻统计";
+            this.gBody_btnCountNow.Name = "gBody_btnCountNow";
+            this.gBody_btnCountNow.ScreenTip = "立刻统计";
+            this.gBody_btnCountNow.ShowImage = true;
+            this.gBody_btnCountNow.SuperTip = "功能与点击父菜单相同，但便于访问键（Alt+C G 空格）访问";
+            this.gBody_btnCountNow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCountNow_Click);
             // 
             // gBody_btnCountSettings
             // 
@@ -159,16 +169,6 @@ namespace mText
             this.gAbout_btnExportPref.ShowImage = true;
             this.gAbout_btnExportPref.SuperTip = "本程序自定义设置项储存在注册表内，卸载时会自动删除。使用此按钮备份到文件";
             this.gAbout_btnExportPref.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gAbout_btnExportPref_Click);
-            // 
-            // gBody_btnCountNow
-            // 
-            this.gBody_btnCountNow.Image = ((System.Drawing.Image)(resources.GetObject("gBody_btnCountNow.Image")));
-            this.gBody_btnCountNow.Label = "立刻统计";
-            this.gBody_btnCountNow.Name = "gBody_btnCountNow";
-            this.gBody_btnCountNow.ScreenTip = "立刻统计";
-            this.gBody_btnCountNow.ShowImage = true;
-            this.gBody_btnCountNow.SuperTip = "功能与点击父菜单相同，但便于访问键（Alt+C G 空格）访问";
-            this.gBody_btnCountNow.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCountNow_Click);
             // 
             // RibbonMain
             // 
