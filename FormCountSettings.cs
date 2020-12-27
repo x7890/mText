@@ -133,12 +133,19 @@ namespace mText
                 // 选中区域，以选中区域为准
                 text = app.Selection.Text;
             }
+
+            int 字符数 = text.Length;
+            int 英文词数 = Regex.Matches(text, @"[a-zA-Z0-9_\-\.@/\\:\$]+").Count;
+            int 中文字数 = Regex.Matches(text, @"[\u4E00-\u9FA5]").Count;
+            int 全角标点数 = Regex.Matches(text, @"[^\x00-\xff\u4E00-\u9FA5]").Count;
+            int 全角字符数 = Regex.Matches(text, @"[^\x00-\xff]").Count;
             string msg = "";
-            msg += "字符数：　" + text.Length + "\n";
-            msg += "英文词数：" + Regex.Matches(text, @"[a-zA-Z0-9_\-\.@/\\:\$]+").Count + "\n";
-            msg += "中文字数：" + Regex.Matches(text, @"[\u4E00-\u9FA5]").Count + "\n";
-            msg += "全角标点数：" + Regex.Matches(text, @"[^\x00-\xff\u4E00-\u9FA5]").Count + "\n";
-            msg += "全角字符数：" + Regex.Matches(text, @"[^\x00-\xff]").Count + "\n";
+            msg += "英文词数：" + 英文词数 + "\n";
+            msg += "中文字数：" + 中文字数 + "\n";
+            msg += "英文词数+中文字数：" + (英文词数 + 中文字数) + "\n";
+            msg += "字符数(含标点与空白符)：" + 字符数 + "\n";
+            msg += "全角标点数：" + 全角标点数 + "\n";
+            msg += "全角字符数：" + 全角字符数 + "\n";
             MessageBox.Show(msg, "字数统计");
         }
 
