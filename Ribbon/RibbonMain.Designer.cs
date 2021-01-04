@@ -42,6 +42,7 @@ namespace mText
             this.gBody_btnCountNow = this.Factory.CreateRibbonButton();
             this.gBody_btnCountSettings = this.Factory.CreateRibbonButton();
             this.gBody_btnFormula = this.Factory.CreateRibbonToggleButton();
+            this.gBody_btnCopyText = this.Factory.CreateRibbonButton();
             this.gTmpl = this.Factory.CreateRibbonGroup();
             this.gRef = this.Factory.CreateRibbonGroup();
             this.gCapt = this.Factory.CreateRibbonGroup();
@@ -69,6 +70,7 @@ namespace mText
             // 
             this.gBody.Items.Add(this.gBody_btnCount);
             this.gBody.Items.Add(this.gBody_btnFormula);
+            this.gBody.Items.Add(this.gBody_btnCopyText);
             this.gBody.Label = "正文编辑";
             this.gBody.Name = "gBody";
             // 
@@ -107,12 +109,24 @@ namespace mText
             // gBody_btnFormula
             // 
             this.gBody_btnFormula.Image = ((System.Drawing.Image)(resources.GetObject("gBody_btnFormula.Image")));
+            this.gBody_btnFormula.KeyTip = "A";
             this.gBody_btnFormula.Label = "公式字母";
             this.gBody_btnFormula.Name = "gBody_btnFormula";
             this.gBody_btnFormula.ScreenTip = "公式字母";
             this.gBody_btnFormula.ShowImage = true;
             this.gBody_btnFormula.SuperTip = "按Ctrl+本按钮查看详细帮助。";
             this.gBody_btnFormula.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnFormula_Click);
+            // 
+            // gBody_btnCopyText
+            // 
+            this.gBody_btnCopyText.Image = ((System.Drawing.Image)(resources.GetObject("gBody_btnCopyText.Image")));
+            this.gBody_btnCopyText.KeyTip = "C";
+            this.gBody_btnCopyText.Label = "简洁复制";
+            this.gBody_btnCopyText.Name = "gBody_btnCopyText";
+            this.gBody_btnCopyText.ScreenTip = "简洁复制";
+            this.gBody_btnCopyText.ShowImage = true;
+            this.gBody_btnCopyText.SuperTip = "以纯文本形式复制所选文本，不含编号。";
+            this.gBody_btnCopyText.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.gBody_btnCopyText_Click);
             // 
             // gTmpl
             // 
@@ -201,6 +215,7 @@ namespace mText
         internal Microsoft.Office.Tools.Ribbon.RibbonSplitButton gBody_btnCount;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton gBody_btnFormula;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton gBody_btnCountNow;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton gBody_btnCopyText;
     }
 
     partial class ThisRibbonCollection

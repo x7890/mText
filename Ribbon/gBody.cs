@@ -115,5 +115,15 @@ namespace mText
             return false;
         }
 
+
+        // 简洁复制
+        private void gBody_btnCopyText_Click(object sender, RibbonControlEventArgs e)
+        {
+            string text = app.Selection.Text;
+            Clipboard.SetText(text);
+        }
+
+
+
     }
 }
