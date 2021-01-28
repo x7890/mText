@@ -179,32 +179,62 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="Forms\CountSettingsForm.cs">
+    <Compile Include="Forms\TextCountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CountSettingsForm.Designer.cs">
-      <DependentUpon>CountSettingsForm.cs</DependentUpon>
+    <Compile Include="Forms\TextCountForm.Designer.cs">
+      <DependentUpon>TextCountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\VersionForm.cs">
+    <Compile Include="Forms\FormulaShortcutForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\VersionForm.Designer.cs">
-      <DependentUpon>VersionForm.cs</DependentUpon>
+    <Compile Include="Forms\FormulaShortcutForm.Designer.cs">
+      <DependentUpon>FormulaShortcutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ribbon\gAbout.cs">
+    <Compile Include="Forms\RefTmplForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RefTmplForm.Designer.cs">
+      <DependentUpon>RefTmplForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TextPasteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextPasteForm.Designer.cs">
+      <DependentUpon>TextPasteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon\公式工具.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ribbon\gBody.cs">
+    <Compile Include="Ribbon\文本工具.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\索引工具.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon\关于程序.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <EmbeddedResource Include="Forms\CountSettingsForm.resx">
-      <DependentUpon>CountSettingsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TextCountForm.resx">
+      <DependentUpon>TextCountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VersionForm.resx">
-      <DependentUpon>VersionForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormulaShortcutForm.resx">
+      <DependentUpon>FormulaShortcutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RefTmplForm.resx">
+      <DependentUpon>RefTmplForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -219,6 +249,9 @@
     <EmbeddedResource Include="Ribbon\RibbonMain.resx">
       <DependentUpon>RibbonMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextPasteForm.resx">
+      <DependentUpon>TextPasteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="mText_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -228,6 +261,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Utils\KeysHook.cs" />
+    <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\RegPref.cs" />
     <Compile Include="Ribbon\RibbonMain.cs">
       <SubType>Component</SubType>
@@ -235,7 +270,6 @@
     <Compile Include="Ribbon\RibbonMain.Designer.cs">
       <DependentUpon>RibbonMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\ShortcutHookHelper.cs" />
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -247,7 +281,6 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -274,7 +307,7 @@
           <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="200B0A089086D201D6B1D6C96257C7B77FBED100" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UseGlobalSettings="True" />
+      <UserProperties BuildVersion_UseGlobalSettings="True" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
